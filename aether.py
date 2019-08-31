@@ -1,3 +1,4 @@
+print('This is Aether: the MicroPython version of Qiskit\nFor the full version, see qiskit.org')
 import random
 from math import cos,sin,pi
 r2=0.70710678118
