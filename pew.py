@@ -50,6 +50,7 @@ def keys():
         keys = 0x00
     for b,k in [(B_UP,K_UP),(B_DOWN,K_DOWN),(B_LEFT,K_LEFT),(B_RIGHT,K_RIGHT),(B_X,K_X),(B_O,K_O)]:
         if keys==b:
+            print('key press:',b)
             return k
     return 0x00
 
