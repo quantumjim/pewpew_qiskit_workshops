@@ -51,11 +51,7 @@ def keys():
         keys = 0x00
     for b,k in [(B_UP,K_UP),(B_DOWN,K_DOWN),(B_LEFT,K_LEFT),(B_RIGHT,K_RIGHT),(B_X,K_X),(B_O,K_O)]:
         if keys==b:
-<<<<<<< HEAD
             #print('key press:',b)
-=======
-            print('key press:',b)
->>>>>>> e486b5a95bee2fb5e7d3ba9dbaf30810aa173992
             return k
     return 0x00
 
