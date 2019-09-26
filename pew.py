@@ -36,7 +36,7 @@ def init():
 def show(pix):
     for Y in range(8):
         for X in range(8):
-            ax.add_patch( Rectangle( (X/8,7/8-Y/8), 1/8, 1/8, color=(int(pix.pixel(X,Y))/3,0,0)) ) 
+            ax.add_patch( pix.buffer[Y][X] ) 
     fig.canvas.draw()
 
 def keys():
@@ -62,8 +62,18 @@ class Pix:
     def __init__(self):
         self.buffer = [[0 for x in range(8)] for y in range(8)]
         
+        self.buffer = []
+        for Y in range(8):
+            line = []
+            for X in range(8):
+                line.append( Rectangle( (X/8,7/8-Y/8), 1/8, 1/8, color=(0,0,0)) )
+            self.buffer.append( line )  
+        
+        
     def pixel(self, x, y, color=None):
         if color is None:
-            return self.buffer[y][x]
+            return self.buffer.get_facecolor()
         else:
-            self.buffer[y][x] = color
+            self.buffer[y][x].set_facecolor( (color/3,0,0) )
+            
+            
